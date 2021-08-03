@@ -1,0 +1,72 @@
+-- UNIVERSIDADE FEDERAL DO RIO DE JANEIRO - UFRJ
+-- Autor: Christian Marques de Oliveira Silva
+--	Disciplina: Laboratório de Sistemas Digitais
+--
+--	Objetivo: Desenvolvimento de uma Unidade Lógica e Aritmética (ULA) de 4 bits e 8 operações
+--
+--	Requisitos:
+--	* Operação da ULA selecionada por 3 chaves externas;
+--	* Operações obrigatórias: soma e subtração em complemento a 2;
+--	* Dados de entrada gerados por um módulo auxiliar, “bancada de testes”, explicado mais
+--	abaixo;
+--	* Exibição dos dados de entrada e resultado, em caracteres hexadecimais, nos displays de 7
+--	segmentos disponíveis na placa FPGA DE2-115, no laboratório LABSLAND.
+--	* Saídas: operandos e resultados, exibidos nos displays de 7 segmentos. 4 flags: Zero, Negativo,
+--	Carry out e Overflow exibidos nos LEDs disponíveis na placa FPGA DE2-115.
+--
+--	Funcionamento
+--		As entradas da ULA são geradas por um módulo “bancada de testes”, um contador, parte
+--	integrante do projeto. As duas entradas são mostradas, juntamente com o resultado, nos
+--	displays de 7 segmentos disponíveis. Os LEDs são utilizados para mostrar as quatro “flags”. Os
+--	operandos vão mudando, em ordem crescente, a cada 2 segundos.
+-----------------------------------------------------------------------------------------------------
+
+------------------------------------
+-- Bibliotecas
+------------------------------------
+library IEEE;
+use IEEE.std_logic_1164.all;
+------------------------------------
+
+------------------------------------
+-- Entidade Principal
+------------------------------------
+entity ULA is 
+port(
+	A,B						:	in		std_logic_vector(3 downto 0);		-- Operandos de 4 bits
+	COUT						:	out	std_logic;
+	RESULT					:	out	std_logic_vector(3 downto 0));	-- Resultado de 4 bits dos 2 operandos 
+end ULA;
+------------------------------------
+
+
+
+------------------------------------
+-- Entidade Principal
+------------------------------------
+architecture hardware of ULA is
+
+component FA_4_bits is
+port (
+	x,y	:	in		std_logic_vector(3 downto 0);
+	cin	:	in		std_logic;
+	cout	:	out	std_logic;
+	z		:	out	std_logic_vector(3 downto 0));
+end component;
+
+begin
+
+	FA0: FA_4_bits port map(A, B, '0', COUT, RESULT);
+
+end hardware;
+------------------------------------
+
+
+
+
+
+
+
+
+
+

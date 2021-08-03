@@ -1,0 +1,385 @@
+|ULA
+X[0] << counter_2_numbers:counter.A[0]
+X[1] << counter_2_numbers:counter.A[1]
+X[2] << counter_2_numbers:counter.A[2]
+X[3] << counter_2_numbers:counter.A[3]
+Y[0] << counter_2_numbers:counter.B[0]
+Y[1] << counter_2_numbers:counter.B[1]
+Y[2] << counter_2_numbers:counter.B[2]
+Y[3] << counter_2_numbers:counter.B[3]
+SEL[0] => Equal0.IN2
+SEL[0] => Equal1.IN2
+SEL[0] => Equal2.IN1
+SEL[0] => Equal3.IN2
+SEL[0] => Equal4.IN1
+SEL[0] => Equal5.IN2
+SEL[0] => Equal6.IN0
+SEL[1] => Equal0.IN1
+SEL[1] => Equal1.IN1
+SEL[1] => Equal2.IN2
+SEL[1] => Equal3.IN1
+SEL[1] => Equal4.IN0
+SEL[1] => Equal5.IN0
+SEL[1] => Equal6.IN2
+SEL[2] => Equal0.IN0
+SEL[2] => Equal1.IN0
+SEL[2] => Equal2.IN0
+SEL[2] => Equal3.IN0
+SEL[2] => Equal4.IN2
+SEL[2] => Equal5.IN1
+SEL[2] => Equal6.IN1
+PAUSE => counter_2_numbers:counter.pause
+CLK => counter_2_numbers:counter.clk
+ZER << ZER.DB_MAX_OUTPUT_PORT_TYPE
+NEG << NEG.DB_MAX_OUTPUT_PORT_TYPE
+OVER << OVER.DB_MAX_OUTPUT_PORT_TYPE
+COUT <> COUT
+RESULT[0] << RESULT.DB_MAX_OUTPUT_PORT_TYPE
+RESULT[1] << RESULT.DB_MAX_OUTPUT_PORT_TYPE
+RESULT[2] << RESULT.DB_MAX_OUTPUT_PORT_TYPE
+RESULT[3] << RESULT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA|counter_2_numbers:counter
+clk => counter:A_counter.clk
+clk => counter:B_counter.clk
+pause => counter:A_counter.pause
+pause => counter:B_counter.pause
+A[0] <= counter:A_counter.q[0]
+A[1] <= counter:A_counter.q[1]
+A[2] <= counter:A_counter.q[2]
+A[3] <= counter:A_counter.q[3]
+B[0] <= counter:B_counter.q[0]
+B[1] <= counter:B_counter.q[1]
+B[2] <= counter:B_counter.q[2]
+B[3] <= counter:B_counter.q[3]
+
+
+|ULA|counter_2_numbers:counter|counter:A_counter
+clk => \counter_process:counter_output[0].CLK
+clk => \counter_process:counter_output[1].CLK
+clk => \counter_process:counter_output[2].CLK
+clk => \counter_process:counter_output[3].CLK
+clk => \counter_process:prescaler[0].CLK
+clk => \counter_process:prescaler[1].CLK
+clk => \counter_process:prescaler[2].CLK
+clk => \counter_process:prescaler[3].CLK
+clk => \counter_process:prescaler[4].CLK
+clk => \counter_process:prescaler[5].CLK
+clk => \counter_process:prescaler[6].CLK
+clk => \counter_process:prescaler[7].CLK
+clk => \counter_process:prescaler[8].CLK
+clk => \counter_process:prescaler[9].CLK
+clk => \counter_process:prescaler[10].CLK
+clk => \counter_process:prescaler[11].CLK
+clk => \counter_process:prescaler[12].CLK
+clk => \counter_process:prescaler[13].CLK
+clk => \counter_process:prescaler[14].CLK
+clk => \counter_process:prescaler[15].CLK
+clk => \counter_process:prescaler[16].CLK
+clk => \counter_process:prescaler[17].CLK
+clk => \counter_process:prescaler[18].CLK
+clk => \counter_process:prescaler[19].CLK
+clk => \counter_process:prescaler[20].CLK
+clk => \counter_process:prescaler[21].CLK
+clk => \counter_process:prescaler[22].CLK
+pause => \counter_process:counter_output[0].ENA
+pause => \counter_process:counter_output[1].ENA
+pause => \counter_process:counter_output[2].ENA
+pause => \counter_process:counter_output[3].ENA
+pause => \counter_process:prescaler[0].ENA
+pause => \counter_process:prescaler[1].ENA
+pause => \counter_process:prescaler[2].ENA
+pause => \counter_process:prescaler[3].ENA
+pause => \counter_process:prescaler[4].ENA
+pause => \counter_process:prescaler[5].ENA
+pause => \counter_process:prescaler[6].ENA
+pause => \counter_process:prescaler[7].ENA
+pause => \counter_process:prescaler[8].ENA
+pause => \counter_process:prescaler[9].ENA
+pause => \counter_process:prescaler[10].ENA
+pause => \counter_process:prescaler[11].ENA
+pause => \counter_process:prescaler[12].ENA
+pause => \counter_process:prescaler[13].ENA
+pause => \counter_process:prescaler[14].ENA
+pause => \counter_process:prescaler[15].ENA
+pause => \counter_process:prescaler[16].ENA
+pause => \counter_process:prescaler[17].ENA
+pause => \counter_process:prescaler[18].ENA
+pause => \counter_process:prescaler[19].ENA
+pause => \counter_process:prescaler[20].ENA
+pause => \counter_process:prescaler[21].ENA
+pause => \counter_process:prescaler[22].ENA
+q[0] <= \counter_process:counter_output[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= \counter_process:counter_output[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= \counter_process:counter_output[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= \counter_process:counter_output[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA|counter_2_numbers:counter|counter:B_counter
+clk => \counter_process:counter_output[0].CLK
+clk => \counter_process:counter_output[1].CLK
+clk => \counter_process:counter_output[2].CLK
+clk => \counter_process:counter_output[3].CLK
+clk => \counter_process:prescaler[0].CLK
+clk => \counter_process:prescaler[1].CLK
+clk => \counter_process:prescaler[2].CLK
+clk => \counter_process:prescaler[3].CLK
+clk => \counter_process:prescaler[4].CLK
+clk => \counter_process:prescaler[5].CLK
+clk => \counter_process:prescaler[6].CLK
+clk => \counter_process:prescaler[7].CLK
+clk => \counter_process:prescaler[8].CLK
+clk => \counter_process:prescaler[9].CLK
+clk => \counter_process:prescaler[10].CLK
+clk => \counter_process:prescaler[11].CLK
+clk => \counter_process:prescaler[12].CLK
+clk => \counter_process:prescaler[13].CLK
+clk => \counter_process:prescaler[14].CLK
+clk => \counter_process:prescaler[15].CLK
+clk => \counter_process:prescaler[16].CLK
+clk => \counter_process:prescaler[17].CLK
+clk => \counter_process:prescaler[18].CLK
+clk => \counter_process:prescaler[19].CLK
+clk => \counter_process:prescaler[20].CLK
+clk => \counter_process:prescaler[21].CLK
+clk => \counter_process:prescaler[22].CLK
+pause => \counter_process:counter_output[0].ENA
+pause => \counter_process:counter_output[1].ENA
+pause => \counter_process:counter_output[2].ENA
+pause => \counter_process:counter_output[3].ENA
+pause => \counter_process:prescaler[0].ENA
+pause => \counter_process:prescaler[1].ENA
+pause => \counter_process:prescaler[2].ENA
+pause => \counter_process:prescaler[3].ENA
+pause => \counter_process:prescaler[4].ENA
+pause => \counter_process:prescaler[5].ENA
+pause => \counter_process:prescaler[6].ENA
+pause => \counter_process:prescaler[7].ENA
+pause => \counter_process:prescaler[8].ENA
+pause => \counter_process:prescaler[9].ENA
+pause => \counter_process:prescaler[10].ENA
+pause => \counter_process:prescaler[11].ENA
+pause => \counter_process:prescaler[12].ENA
+pause => \counter_process:prescaler[13].ENA
+pause => \counter_process:prescaler[14].ENA
+pause => \counter_process:prescaler[15].ENA
+pause => \counter_process:prescaler[16].ENA
+pause => \counter_process:prescaler[17].ENA
+pause => \counter_process:prescaler[18].ENA
+pause => \counter_process:prescaler[19].ENA
+pause => \counter_process:prescaler[20].ENA
+pause => \counter_process:prescaler[21].ENA
+pause => \counter_process:prescaler[22].ENA
+q[0] <= \counter_process:counter_output[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= \counter_process:counter_output[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= \counter_process:counter_output[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= \counter_process:counter_output[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA|Add_Sub_C2:Add_C2
+A[0] => FA_4_bits:Full_Adder.x[0]
+A[1] => FA_4_bits:Full_Adder.x[1]
+A[2] => FA_4_bits:Full_Adder.x[2]
+A[3] => check_result.IN1
+A[3] => check_result.IN1
+A[3] => FA_4_bits:Full_Adder.x[3]
+B[0] => operatorB[0].DATAB
+B[0] => operatorB[0].DATAA
+B[1] => operatorB[1].DATAB
+B[1] => operatorB[1].DATAA
+B[2] => operatorB[2].DATAB
+B[2] => operatorB[2].DATAA
+B[3] => operatorB[3].DATAB
+B[3] => operatorB[3].DATAA
+IS_ADD => operatorB[3].OUTPUTSELECT
+IS_ADD => operatorB[2].OUTPUTSELECT
+IS_ADD => operatorB[1].OUTPUTSELECT
+IS_ADD => operatorB[0].OUTPUTSELECT
+IS_ADD => FA_4_bits:Full_Adder.cin
+ZERO <= ZERO.DB_MAX_OUTPUT_PORT_TYPE
+NEGATIVE <= NEGATIVE.DB_MAX_OUTPUT_PORT_TYPE
+OVERFLOW <= check_result.DB_MAX_OUTPUT_PORT_TYPE
+C_OUT <> C_OUT
+RESULT[0] <= FA_4_bits:Full_Adder.z[0]
+RESULT[1] <= FA_4_bits:Full_Adder.z[1]
+RESULT[2] <= FA_4_bits:Full_Adder.z[2]
+RESULT[3] <= FA_4_bits:Full_Adder.z[3]
+
+
+|ULA|Add_Sub_C2:Add_C2|FA_4_bits:Full_Adder
+x[0] => FA:a0.A
+x[1] => FA:a1.A
+x[2] => FA:a2.A
+x[3] => FA:a3.A
+y[0] => FA:a0.B
+y[1] => FA:a1.B
+y[2] => FA:a2.B
+y[3] => FA:a3.B
+cin => FA:a0.C_in
+cout <= FA:a3.C_out
+z[0] <= FA:a0.S
+z[1] <= FA:a1.S
+z[2] <= FA:a2.S
+z[3] <= FA:a3.S
+
+
+|ULA|Add_Sub_C2:Add_C2|FA_4_bits:Full_Adder|FA:a0
+A => S.IN0
+A => C_out.IN0
+A => C_out.IN0
+B => S.IN1
+B => C_out.IN0
+B => C_out.IN1
+C_in => S.IN1
+C_in => C_out.IN1
+C_in => C_out.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA|Add_Sub_C2:Add_C2|FA_4_bits:Full_Adder|FA:a1
+A => S.IN0
+A => C_out.IN0
+A => C_out.IN0
+B => S.IN1
+B => C_out.IN0
+B => C_out.IN1
+C_in => S.IN1
+C_in => C_out.IN1
+C_in => C_out.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA|Add_Sub_C2:Add_C2|FA_4_bits:Full_Adder|FA:a2
+A => S.IN0
+A => C_out.IN0
+A => C_out.IN0
+B => S.IN1
+B => C_out.IN0
+B => C_out.IN1
+C_in => S.IN1
+C_in => C_out.IN1
+C_in => C_out.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA|Add_Sub_C2:Add_C2|FA_4_bits:Full_Adder|FA:a3
+A => S.IN0
+A => C_out.IN0
+A => C_out.IN0
+B => S.IN1
+B => C_out.IN0
+B => C_out.IN1
+C_in => S.IN1
+C_in => C_out.IN1
+C_in => C_out.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA|Add_Sub_C2:Sub_C2
+A[0] => FA_4_bits:Full_Adder.x[0]
+A[1] => FA_4_bits:Full_Adder.x[1]
+A[2] => FA_4_bits:Full_Adder.x[2]
+A[3] => check_result.IN1
+A[3] => check_result.IN1
+A[3] => FA_4_bits:Full_Adder.x[3]
+B[0] => operatorB[0].DATAB
+B[0] => operatorB[0].DATAA
+B[1] => operatorB[1].DATAB
+B[1] => operatorB[1].DATAA
+B[2] => operatorB[2].DATAB
+B[2] => operatorB[2].DATAA
+B[3] => operatorB[3].DATAB
+B[3] => operatorB[3].DATAA
+IS_ADD => operatorB[3].OUTPUTSELECT
+IS_ADD => operatorB[2].OUTPUTSELECT
+IS_ADD => operatorB[1].OUTPUTSELECT
+IS_ADD => operatorB[0].OUTPUTSELECT
+IS_ADD => FA_4_bits:Full_Adder.cin
+ZERO <= ZERO.DB_MAX_OUTPUT_PORT_TYPE
+NEGATIVE <= NEGATIVE.DB_MAX_OUTPUT_PORT_TYPE
+OVERFLOW <= check_result.DB_MAX_OUTPUT_PORT_TYPE
+C_OUT <> C_OUT
+RESULT[0] <= FA_4_bits:Full_Adder.z[0]
+RESULT[1] <= FA_4_bits:Full_Adder.z[1]
+RESULT[2] <= FA_4_bits:Full_Adder.z[2]
+RESULT[3] <= FA_4_bits:Full_Adder.z[3]
+
+
+|ULA|Add_Sub_C2:Sub_C2|FA_4_bits:Full_Adder
+x[0] => FA:a0.A
+x[1] => FA:a1.A
+x[2] => FA:a2.A
+x[3] => FA:a3.A
+y[0] => FA:a0.B
+y[1] => FA:a1.B
+y[2] => FA:a2.B
+y[3] => FA:a3.B
+cin => FA:a0.C_in
+cout <= FA:a3.C_out
+z[0] <= FA:a0.S
+z[1] <= FA:a1.S
+z[2] <= FA:a2.S
+z[3] <= FA:a3.S
+
+
+|ULA|Add_Sub_C2:Sub_C2|FA_4_bits:Full_Adder|FA:a0
+A => S.IN0
+A => C_out.IN0
+A => C_out.IN0
+B => S.IN1
+B => C_out.IN0
+B => C_out.IN1
+C_in => S.IN1
+C_in => C_out.IN1
+C_in => C_out.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA|Add_Sub_C2:Sub_C2|FA_4_bits:Full_Adder|FA:a1
+A => S.IN0
+A => C_out.IN0
+A => C_out.IN0
+B => S.IN1
+B => C_out.IN0
+B => C_out.IN1
+C_in => S.IN1
+C_in => C_out.IN1
+C_in => C_out.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA|Add_Sub_C2:Sub_C2|FA_4_bits:Full_Adder|FA:a2
+A => S.IN0
+A => C_out.IN0
+A => C_out.IN0
+B => S.IN1
+B => C_out.IN0
+B => C_out.IN1
+C_in => S.IN1
+C_in => C_out.IN1
+C_in => C_out.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA|Add_Sub_C2:Sub_C2|FA_4_bits:Full_Adder|FA:a3
+A => S.IN0
+A => C_out.IN0
+A => C_out.IN0
+B => S.IN1
+B => C_out.IN0
+B => C_out.IN1
+C_in => S.IN1
+C_in => C_out.IN1
+C_in => C_out.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
