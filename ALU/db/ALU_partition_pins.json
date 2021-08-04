@@ -1,0 +1,169 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "G_LED[0]",
+					"strict" : false
+				},
+				{
+					"name" : "G_LED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "G_LED[2]",
+					"strict" : false
+				},
+				{
+					"name" : "G_LED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX7[6]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX6[0]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX6[1]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX6[2]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX6[3]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX6[4]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX6[5]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX6[6]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX5[6]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "G_HEX0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "V_SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "V_SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "V_SW[2]",
+					"strict" : false
+				},
+				{
+					"name" : "V_SW[3]",
+					"strict" : false
+				},
+				{
+					"name" : "G_CLOCK_50",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
