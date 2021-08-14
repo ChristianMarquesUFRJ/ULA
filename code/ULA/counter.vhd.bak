@@ -1,13 +1,4 @@
--- UNIVERSIDADE FEDERAL DO RIO DE JANEIRO - UFRJ
--- Autor: Christian Marques de Oliveira Silva
---	Disciplina: Laboratório de Sistemas Digitais
---
--- Objetivo: Contador simples de -8 a 7 (complemento de 2). Ainda, possibilita o aumento do tempo 
---           de incremento através do atributo 'times', o qual permite espaçamentos de contagens 
---           múltiplos do incremento unitário (~1 segundo).
---
---	Entradas: 	clk, pause
--- Saidas: 		q[4]
+-- Objetivo: Contador simples de -8 a 7 (complemento de 2)
 -----------------------------------------------------------------------------------------------------
 
 ------------------------------------
@@ -40,7 +31,7 @@ architecture hardware of counter is
 begin
 
 	counter_process : process(clk)
-		variable counter_output	: std_logic_vector (3 downto 0) := "1000";	-- Contador da saída (-8 a 7)
+		variable counter_output	: std_logic_vector (3 downto 0) := "1000";							-- Contador da saída (-8 a 7)
 		variable prescaler: std_logic_vector (30 downto 0) := (others=>'0');	-- Contador p/ redução da atualização de saída (~1 seg)
 		variable maximum	: integer := 100000000;	-- Contador p/ redução da atualização de saída (~1 seg)
 	begin

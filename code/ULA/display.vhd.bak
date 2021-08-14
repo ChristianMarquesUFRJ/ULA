@@ -1,8 +1,4 @@
--- UNIVERSIDADE FEDERAL DO RIO DE JANEIRO - UFRJ
--- Autor: Christian Marques de Oliveira Silva
---	Disciplina: Laboratório de Sistemas Digitais
---
---	Objetivo: Exibir valor numérico em um display de 7 segmentos
+--	Objetivo: Exibir valor em um display de 7 segmentos
 --
 -- Entradas: 	VALUE_IN, 
 -- Saidas: 		DISPLAY_OUT
@@ -69,13 +65,13 @@ begin
 		 -- Caso o valor seja um número negativo
 		else
 			-- Realiza o inverso do complemento de 2 para obter a magnitude do valor
-			VALUE_IN_proc <= not VALUE_IN_sub;	-- Inverte todos os bits
-			VALUE_IN_proc(3) <= '0'; 				-- Faz uma 'máscara' para só obter de 0 a 7
+			VALUE_IN_proc <= not VALUE_IN_sub;															-- Inverte todos os bits
+			VALUE_IN_proc(3) <= '0';	-- Faz uma máscara para só obter de 0 a 7
 		
 		end if;
 		
 		case VALUE_IN_proc is
-			--							          0123456
+			--							   0123456
 			when "0000" => DISPLAY_OUT <= "1000000"; -- "0"     
 			when "0001" => DISPLAY_OUT <= "1111001"; -- "1" 
 			when "0010" => DISPLAY_OUT <= "0100100"; -- "2" 

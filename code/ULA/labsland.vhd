@@ -33,17 +33,17 @@ use IEEE.std_logic_1164.all;
 ------------------------------------
 entity labsland is 
 	port(
-	V_SW						:	in		std_logic_vector(3 downto 0);
-	G_LED						:	out	std_logic_vector(3 downto 0);
-	G_CLOCK_50				:	in		std_logic;								-- Clock para o funcionamento do sistema
-	G_HEX7	    			:	out	std_logic_vector(6 downto 0);		-- Sinal A
-	G_HEX6	    			:	out	std_logic_vector(6 downto 0);		-- Operando A
-	G_HEX5	    			:	out	std_logic_vector(6 downto 0);		-- Sinal B
-	G_HEX3	    			:	out	std_logic_vector(6 downto 0);		-- Operação
-	G_HEX4	    			:	out	std_logic_vector(6 downto 0);		-- Operando B
-	G_HEX2	    			:	out	std_logic_vector(6 downto 0);		-- Igualdade
-	G_HEX1	    			:	out	std_logic_vector(6 downto 0);		-- Sinal do Resultado
-	G_HEX0	    			:	out	std_logic_vector(6 downto 0));	-- Resultado da operação
+	V_SW						:	in		std_logic_vector(3 downto 0);	-- Entradas do sistema (Seleção e pausa)
+	G_LED						:	out	std_logic_vector(3 downto 0);	-- Flags de indicação (zero, negativo, overflow e carry out)
+	G_CLOCK_50				:	in		std_logic;							-- Clock para o funcionamento do sistema
+	G_HEX7	    			:	out	std_logic_vector(6 downto 0);	-- Sinal A
+	G_HEX6	    			:	out	std_logic_vector(6 downto 0);	-- Operando A
+	G_HEX5	    			:	out	std_logic_vector(6 downto 0);	-- Sinal B
+	G_HEX3	    			:	out	std_logic_vector(6 downto 0);	-- Operação
+	G_HEX4	    			:	out	std_logic_vector(6 downto 0);	-- Operando B
+	G_HEX2	    			:	out	std_logic_vector(6 downto 0);	-- Igualdade
+	G_HEX1	    			:	out	std_logic_vector(6 downto 0);	-- Sinal do Resultado
+	G_HEX0	    			:	out	std_logic_vector(6 downto 0));-- Resultado da operação
 end labsland;
 
 
@@ -80,22 +80,17 @@ architecture hardware of labsland is
 	signal DISPLAY_SA,DISPLAY_SB,DISPLAY_SRES,DISPLAY_IG	: std_logic_vector(6 downto 0);
 	--
 	
-	signal display_neg 	: std_logic_vector(6 downto 0) := "0111111";
-	signal display_pos 	: std_logic_vector(6 downto 0) := "1111111";
-	signal display_eq 	: std_logic_vector(6 downto 0) := "0110111";
+	-- Caracteres de exibição no display
+	signal display_neg 	: std_logic_vector(6 downto 0) := "0111111"; -- hífen '-' (Números negativos)
+	signal display_pos 	: std_logic_vector(6 downto 0) := "1111111"; -- vazio ''  (Números positivos)
+	signal display_eq 	: std_logic_vector(6 downto 0) := "0110111"; -- Igual '='
 	
 begin
 
-	SEL 	<= V_SW(2 downto 0); -- Renomeia a seleção de operação
+	-- Renomeia a seleção de operação
+	SEL 	<= V_SW(2 downto 0); 
+	-- Renomeia o botão de pausa
 	PAUSE <= V_SW(3);
-	
---	A 			<= "0010";
---	B			<= "0011";
---	RESULT 	<= "0101";
---	ZER	<= '1';
---	NEG	<= '1';
---	OVER	<= '1';
---	COUT	<= '1';
 
 	ULA_calculate: ULA port map(A,B,SEL,PAUSE,G_CLOCK_50,ZER,NEG,OVER,COUT,RESULT);
 
@@ -125,16 +120,17 @@ begin
 		end if;
 	end process;
 	
-	DISPLAY_IG 		<= display_eq;
-	G_HEX7 	<= DISPLAY_SA;
-	G_HEX6 	<= DISPLAY_A;
-	G_HEX5	<= DISPLAY_SB;
-	G_HEX4 	<= DISPLAY_B;
-	G_HEX3	<= DISPLAY_OP;
-	G_HEX2	<= DISPLAY_IG;
-	G_HEX1	<= DISPLAY_SRES;
-	G_HEX0	<= DISPLAY_RES;
-	G_LED		<= ZER & NEG & OVER & COUT;
+	-- Atualização das saídas
+	DISPLAY_IG 	<= display_eq;
+	G_HEX7 		<= DISPLAY_SA;
+	G_HEX6 		<= DISPLAY_A;
+	G_HEX5		<= DISPLAY_SB;
+	G_HEX4 		<= DISPLAY_B;
+	G_HEX3		<= DISPLAY_OP;
+	G_HEX2		<= DISPLAY_IG;
+	G_HEX1		<= DISPLAY_SRES;
+	G_HEX0		<= DISPLAY_RES;
+	G_LED			<= ZER & NEG & OVER & COUT;
 
 end hardware;
 ------------------------------------

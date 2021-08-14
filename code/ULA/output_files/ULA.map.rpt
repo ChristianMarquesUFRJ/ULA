@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ULA
-Sat Aug 14 12:52:19 2021
+Sat Aug 14 16:22:57 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -47,7 +47,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Aug 14 12:52:19 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sat Aug 14 16:22:57 2021       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; ULA                                         ;
 ; Top-level Entity Name              ; ULA                                         ;
@@ -312,7 +312,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -322,35 +322,35 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Aug 14 12:52:02 2021
+    Info: Processing started: Sat Aug 14 16:22:41 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ULA -c ULA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Warning (12125): Using design file ula.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: ULA-hardware File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 51
+    Info (12022): Found design unit 1: ULA-hardware File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 52
     Info (12023): Found entity 1: ULA File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 34
 Info (12127): Elaborating entity "ULA" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at ula.vhd(99): signal "resAdd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 99
-Warning (10492): VHDL Process Statement warning at ula.vhd(100): signal "zer_add" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 100
-Warning (10492): VHDL Process Statement warning at ula.vhd(101): signal "neg_add" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 101
-Warning (10492): VHDL Process Statement warning at ula.vhd(102): signal "over_add" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 102
-Warning (10492): VHDL Process Statement warning at ula.vhd(103): signal "cout_add" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 103
-Warning (10492): VHDL Process Statement warning at ula.vhd(107): signal "resSub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 107
-Warning (10492): VHDL Process Statement warning at ula.vhd(108): signal "zer_sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 108
-Warning (10492): VHDL Process Statement warning at ula.vhd(109): signal "neg_sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 109
-Warning (10492): VHDL Process Statement warning at ula.vhd(110): signal "over_sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 110
-Warning (10492): VHDL Process Statement warning at ula.vhd(111): signal "cout_sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 111
-Warning (10492): VHDL Process Statement warning at ula.vhd(147): signal "res_bin" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 147
-Warning (10492): VHDL Process Statement warning at ula.vhd(154): signal "res_bin" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 154
-Warning (10631): VHDL Process Statement warning at ula.vhd(94): inferring latch(es) for signal or variable "res_bin", which holds its previous value in one or more paths through the process File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 94
-Info (10041): Inferred latch for "res_bin[0]" at ula.vhd(94) File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 94
-Info (10041): Inferred latch for "res_bin[1]" at ula.vhd(94) File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 94
-Info (10041): Inferred latch for "res_bin[2]" at ula.vhd(94) File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 94
-Info (10041): Inferred latch for "res_bin[3]" at ula.vhd(94) File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 94
+Warning (10492): VHDL Process Statement warning at ula.vhd(100): signal "resAdd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at ula.vhd(101): signal "zer_add" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 101
+Warning (10492): VHDL Process Statement warning at ula.vhd(102): signal "neg_add" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at ula.vhd(103): signal "over_add" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at ula.vhd(104): signal "cout_add" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at ula.vhd(108): signal "resSub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 108
+Warning (10492): VHDL Process Statement warning at ula.vhd(109): signal "zer_sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at ula.vhd(110): signal "neg_sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at ula.vhd(111): signal "over_sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at ula.vhd(112): signal "cout_sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at ula.vhd(148): signal "res_bin" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 148
+Warning (10492): VHDL Process Statement warning at ula.vhd(155): signal "res_bin" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ula.vhd(95): inferring latch(es) for signal or variable "res_bin", which holds its previous value in one or more paths through the process File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
+Info (10041): Inferred latch for "res_bin[0]" at ula.vhd(95) File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
+Info (10041): Inferred latch for "res_bin[1]" at ula.vhd(95) File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
+Info (10041): Inferred latch for "res_bin[2]" at ula.vhd(95) File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
+Info (10041): Inferred latch for "res_bin[3]" at ula.vhd(95) File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
 Warning (12125): Using design file add_sub_c2.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: Add_Sub_C2-hardware File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/add_sub_c2.vhd Line: 36
     Info (12023): Found entity 1: Add_Sub_C2 File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/add_sub_c2.vhd Line: 21
-Info (12128): Elaborating entity "Add_Sub_C2" for hierarchy "Add_Sub_C2:Add_C2" File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 91
+Info (12128): Elaborating entity "Add_Sub_C2" for hierarchy "Add_Sub_C2:Add_C2" File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 92
 Warning (10540): VHDL Signal Declaration warning at add_sub_c2.vhd(48): used explicit default value for signal "signalRES" because signal was never assigned a value File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/add_sub_c2.vhd Line: 48
 Warning (12125): Using design file fa_4_bits.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: FA_4_bits-hardware File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/fa_4_bits.vhd Line: 36
@@ -360,28 +360,28 @@ Warning (12125): Using design file fa.vhd, which is not specified as a design fi
     Info (12022): Found design unit 1: FA-hardware File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/fa.vhd Line: 33
     Info (12023): Found entity 1: FA File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/fa.vhd Line: 21
 Info (12128): Elaborating entity "FA" for hierarchy "Add_Sub_C2:Add_C2|FA_4_bits:Full_Adder|FA:a0" File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/fa_4_bits.vhd Line: 50
-Warning (13012): Latch res_bin[1] has unsafe behavior File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 94
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SEL[2] File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 37
-Warning (13012): Latch res_bin[2] has unsafe behavior File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 94
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SEL[2] File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 37
-Warning (13012): Latch res_bin[3] has unsafe behavior File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 94
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SEL[2] File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 37
-Warning (13012): Latch res_bin[0] has unsafe behavior File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 94
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SEL[2] File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 37
+Warning (13012): Latch res_bin[1] has unsafe behavior File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SEL[2] File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 38
+Warning (13012): Latch res_bin[2] has unsafe behavior File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SEL[2] File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 38
+Warning (13012): Latch res_bin[3] has unsafe behavior File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SEL[2] File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 38
+Warning (13012): Latch res_bin[0] has unsafe behavior File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SEL[2] File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 38
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "PAUSE" File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 38
-    Warning (15610): No output dependent on input pin "CLK" File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 39
+    Warning (15610): No output dependent on input pin "PAUSE" File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 39
+    Warning (15610): No output dependent on input pin "CLK" File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 40
 Info (21057): Implemented 74 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 8 output pins
     Info (21061): Implemented 53 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 4769 megabytes
-    Info: Processing ended: Sat Aug 14 12:52:19 2021
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:35
+    Info: Peak virtual memory: 4781 megabytes
+    Info: Processing ended: Sat Aug 14 16:22:57 2021
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:30
 
 

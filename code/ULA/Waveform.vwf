@@ -21,6 +21,7 @@ after 2500 simTimestamp
 run -all
 quit -f
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -39,6 +40,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
@@ -228,7 +230,7 @@ SIGNAL("ZER")
 	PARENT = "";
 }
 
-SIGNAL("A")
+SIGNAL("X")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
@@ -245,7 +247,7 @@ SIGNAL("A[3]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "A";
+	PARENT = "X";
 }
 
 SIGNAL("A[2]")
@@ -255,7 +257,7 @@ SIGNAL("A[2]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "A";
+	PARENT = "X";
 }
 
 SIGNAL("A[1]")
@@ -265,7 +267,7 @@ SIGNAL("A[1]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "A";
+	PARENT = "X";
 }
 
 SIGNAL("A[0]")
@@ -275,10 +277,10 @@ SIGNAL("A[0]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "A";
+	PARENT = "X";
 }
 
-SIGNAL("B")
+SIGNAL("Y")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
@@ -295,7 +297,7 @@ SIGNAL("B[3]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "B";
+	PARENT = "Y";
 }
 
 SIGNAL("B[2]")
@@ -305,7 +307,7 @@ SIGNAL("B[2]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "B";
+	PARENT = "Y";
 }
 
 SIGNAL("B[1]")
@@ -315,7 +317,7 @@ SIGNAL("B[1]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "B";
+	PARENT = "Y";
 }
 
 SIGNAL("B[0]")
@@ -325,7 +327,7 @@ SIGNAL("B[0]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "B";
+	PARENT = "Y";
 }
 
 TRANSITION_LIST("CLK")
@@ -419,7 +421,7 @@ TRANSITION_LIST("SEL[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
@@ -428,7 +430,7 @@ TRANSITION_LIST("SEL[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
@@ -574,9 +576,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "A";
+	CHANNEL = "X";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Binary;
 	TREE_INDEX = 2;
 	TREE_LEVEL = 0;
 	CHILDREN = 3, 4, 5, 6;
@@ -586,7 +588,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "A[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Binary;
 	TREE_INDEX = 3;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -596,7 +598,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "A[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Binary;
 	TREE_INDEX = 4;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -606,7 +608,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "A[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Binary;
 	TREE_INDEX = 5;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -616,7 +618,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "A[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Binary;
 	TREE_INDEX = 6;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -624,9 +626,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "B";
+	CHANNEL = "Y";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Binary;
 	TREE_INDEX = 7;
 	TREE_LEVEL = 0;
 	CHILDREN = 8, 9, 10, 11;
@@ -636,7 +638,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "B[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Binary;
 	TREE_INDEX = 8;
 	TREE_LEVEL = 1;
 	PARENT = 7;
@@ -646,7 +648,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "B[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Binary;
 	TREE_INDEX = 9;
 	TREE_LEVEL = 1;
 	PARENT = 7;
@@ -656,7 +658,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "B[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Binary;
 	TREE_INDEX = 10;
 	TREE_LEVEL = 1;
 	PARENT = 7;
@@ -666,7 +668,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "B[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Binary;
 	TREE_INDEX = 11;
 	TREE_LEVEL = 1;
 	PARENT = 7;
@@ -716,7 +718,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "RESULT";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Binary;
 	TREE_INDEX = 16;
 	TREE_LEVEL = 0;
 	CHILDREN = 17, 18, 19, 20;
@@ -726,7 +728,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "RESULT[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Binary;
 	TREE_INDEX = 17;
 	TREE_LEVEL = 1;
 	PARENT = 16;
@@ -736,7 +738,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "RESULT[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Binary;
 	TREE_INDEX = 18;
 	TREE_LEVEL = 1;
 	PARENT = 16;
@@ -746,7 +748,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "RESULT[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Binary;
 	TREE_INDEX = 19;
 	TREE_LEVEL = 1;
 	PARENT = 16;
@@ -756,7 +758,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "RESULT[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Binary;
 	TREE_INDEX = 20;
 	TREE_LEVEL = 1;
 	PARENT = 16;

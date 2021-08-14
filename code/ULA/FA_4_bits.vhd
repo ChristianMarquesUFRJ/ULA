@@ -5,7 +5,7 @@
 --	Objetivo: Full adder de 4 bits utilizando a unidade do Full Adder de um bit
 --
 --	Entradas: x[4], y[4], cin
--- Saidas: s[4], cout
+-- Saidas: z[4], cout-1, cout
 -----------------------------------------------------------------------------------------------------
 
 ------------------------------------
@@ -52,8 +52,9 @@ begin
 	a2:	FA	port map(x(2), y(2), carry(1), z(2), carry(2));
 	a3:	FA	port map(x(3), y(3), carry(2), z(3), carry(3));
 	
-	cout_1 	<= carry(2);
-	cout		<= carry(3);
+	-- Carry's out
+	cout_1 	<= carry(2); -- carry out do penúltimo bit
+	cout		<= carry(3); -- carry out do último bit
 
 end hardware;
 ------------------------------------
