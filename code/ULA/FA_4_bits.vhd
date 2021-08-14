@@ -23,6 +23,7 @@ port (
 	x,y	:	in		std_logic_vector(3 downto 0);
 	cin	:	in		std_logic;
 	cout	:	out	std_logic;
+	cout_1:	out	std_logic;
 	z		:	out	std_logic_vector(3 downto 0));
 end FA_4_bits;
 ------------------------------------
@@ -49,7 +50,10 @@ begin
 	a0:	FA	port map(x(0), y(0), cin,		 z(0), carry(0));
 	a1:	FA	port map(x(1), y(1), carry(0), z(1), carry(1));
 	a2:	FA	port map(x(2), y(2), carry(1), z(2), carry(2));
-	a3:	FA	port map(x(3), y(3), carry(2), z(3), cout);
+	a3:	FA	port map(x(3), y(3), carry(2), z(3), carry(3));
+	
+	cout_1 	<= carry(2);
+	cout		<= carry(3);
 
 end hardware;
 ------------------------------------

@@ -4,8 +4,8 @@
 --
 --	Objetivo: Desenvolvimento de um somador e subtrator em complemento de 2 para 4 bits
 --
---	Entradas: x[4], y[4], cin
--- Saidas: s[4], cout
+--	Entradas: 	A[4], B[4], IS_ADD
+-- Saidas: 		RESULT[4], ZERO, NEGATIVE, OVERFLOW, C_OUT
 -----------------------------------------------------------------------------------------------------
 
 ------------------------------------
@@ -23,7 +23,7 @@ port(
 	A,B							:	in		std_logic_vector(3 downto 0);		-- Operandos de 4 bits
 	IS_ADD						:	in		std_logic;								-- Definição de soma ou subtração
 	ZERO,NEGATIVE,OVERFLOW	:	out	std_logic;								-- Flags de indicação de zero, valor negativo e overflow, respectivamente
-	C_OUT							:	inout	std_logic;								-- Flag de Carry Out
+	C_OUT							:	out	std_logic;								-- Flag de Carry Out
 	RESULT						:	out	std_logic_vector(3 downto 0));	-- Resultado de 4 bits dos 2 operandos 
 end Add_Sub_C2;
 ------------------------------------
@@ -40,68 +40,44 @@ architecture hardware of Add_Sub_C2 is
 		x,y	:	in		std_logic_vector(3 downto 0);
 		cin	:	in		std_logic;
 		cout	:	out	std_logic;
+		cout_1:	out	std_logic;
 		z		:	out	std_logic_vector(3 downto 0));
 	end component;
 
-	signal operatorA, operatorB, res, res_map	:	std_logic_vector(3 downto 0);
-	signal c_in	:	std_logic;
+	signal operatorB, res	: std_logic_vector(3 downto 0);
+	signal signalRES			: std_logic := res(3);
+	signal c_in					: std_logic;
+	signal c_out_0, c_out_1	: std_logic; -- Carry out do último bit e Carry out do bit anterior
+	signal over 				: std_logic; -- Overflow
 
 begin
-
-
-	proc: process(A,B)
-		variable signalA	: std_logic := A(3);
-		variable signalB 	: std_logic := B(3);
-		variable A_diff_B : std_logic := signalA xor signalB;
-	begin
-		
-		-- Inicialização padrão das entradas	
-		operatorA <= A;
-		operatorB <= B;
-		------------------------------------
-
-		 -- Soma em complemento de 2
-		if (IS_ADD = '1') then
-			c_in <= '0';
-		
-		-- Subtração em complemento de 2
-		else
-			operatorB <= not B;
-			c_in <= '1';
-		end if;
-		
-		
-	end process proc;
 	
-	Full_Adder: FA_4_bits port map(operatorA, operatorB, c_in, C_OUT, res_map);
-	
-	check_result: process(operatorA,operatorB)
-		variable signalA	: std_logic := operatorA(3);
-		variable signalB 	: std_logic := operatorB(3);
-		variable A_diff_B : std_logic := signalA xor signalB;
-	begin
-	
-		res <= res_map;
-			
-		-- Se os operadores possuem o mesmo sinal e a resposta tem um sinal diferente, houve overflow
-		if ((A_diff_B = '0') and (res(3) /= signalA)) then
-			OVERFLOW <= '1';
-			ZERO 		<= '0';
-			NEGATIVE <= '0';
+	-- Prepara o segundo operando para a operação (inverte caso seja uma subtração)
+	with IS_ADD select operatorB <= 
+		B 		when '1', -- Soma
+		not B when '0'; -- Subtração
 		
-		else -- Não houve overflow
-			OVERFLOW <= '0';
-			
-			-- Flag de resultado negativo
-			if (res(3) = '1') then NEGATIVE <= '1'; else NEGATIVE <= '0'; end if;
-			
-			-- Flag de resultado zero
-			if (res = "0000") then ZERO <= '1'; else ZERO <= '0'; end if;
-		end if;
-		
+	-- Prepara o carry in para a operação (1 caso seja uma subtração)
+	c_in <= not IS_ADD;
 	
-	end process check_result;
+	Full_Adder: FA_4_bits port map(A, operatorB, c_in, c_out_0, c_out_1, res);
 	
+	-- Caso seja uma adição, a saída é o COUT; 
+	-- Caso seja uma subtração, a saída é COUT barrado (not COUT)
+	C_OUT <= ((not IS_ADD) and c_out_0) or (IS_ADD and (not c_out_0));
+	
+	-- Caso o carry do bit atual e do anterior sejam diferentes, houve overflow
+	over <= c_out_0 xor c_out_1;
+	
+	-- Se não houve overflow e o bit mais significativo do resultado for 1, o número é negativo
+	-- 1000 (-8) a 1111 (-1)
+	NEGATIVE <= signalRES and (not over);
+	
+	-- Se não houve overflow e todos os bits de resultado são 0, a saída realmente é zero
+	ZERO <= (not over) and (not res(3)) and (not res(2)) and (not res(1)) and (not res(0));
+	
+	-- Passagem dos sinais para as saídas
+	OVERFLOW <= over;
 	RESULT <= res;
 
 end hardware;

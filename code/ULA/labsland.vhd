@@ -45,18 +45,6 @@ entity labsland is
 	G_HEX1	    			:	out	std_logic_vector(6 downto 0);		-- Sinal do Resultado
 	G_HEX0	    			:	out	std_logic_vector(6 downto 0));	-- Resultado da operação
 end labsland;
---entity ALU is 
---	port(
---	A,B						:	out	std_logic_vector(3 downto 0);		-- Operandos de 4 bits
---	SEL						:	in		std_logic_vector(2 downto 0);
---	PAUSE 					: 	in		std_logic;								-- Para temporariamente o incremento dos operandos
---	CLK						:	in		std_logic;								-- Clock para o funcionamento do sistema
---	ZER,NEG,OVER			:	out	std_logic;
---	COUT						:	inout	std_logic;
---	RESULT					:	out	std_logic_vector(3 downto 0));	-- Resultado de 4 bits dos 2 operandos 
---end ALU;
-------------------------------------
-
 
 
 ------------------------------------
@@ -67,12 +55,12 @@ architecture hardware of labsland is
 	-- Definicao do componente
 	component ULA is 
 	port(
-		X,Y						:	out		std_logic_vector(3 downto 0);		-- Operandos de 4 bits
+		X,Y						:	out	std_logic_vector(3 downto 0);		-- Operandos de 4 bits
 		SEL						:	in		std_logic_vector(2 downto 0);
 		PAUSE 					: 	in		std_logic;								-- Para temporariamente o incremento dos operandos
 		CLK						:	in		std_logic;								-- Clock para o funcionamento do sistema
 		ZER,NEG,OVER			:	out	std_logic;
-		COUT						:	inout	std_logic;
+		COUT						:	out	std_logic;
 		RESULT					:	out	std_logic_vector(3 downto 0));	-- Resultado de 4 bits dos 2 operandos 
 	end component;
 	

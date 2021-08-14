@@ -33,12 +33,12 @@ use IEEE.std_logic_1164.all;
 ------------------------------------
 entity ULA is 
 port(
-	X,Y						:	out	std_logic_vector(3 downto 0);		-- Operandos de 4 bits
-	SEL						:	in		std_logic_vector(2 downto 0);
+	A,B						:	in		std_logic_vector(3 downto 0);		-- Operandos de 4 bits
+	SEL						:	in		std_logic_vector(2 downto 0);		-- Definição da seleção de operação
 	PAUSE 					: 	in		std_logic;								-- Para temporariamente o incremento dos operandos
 	CLK						:	in		std_logic;								-- Clock para o funcionamento do sistema
-	ZER,NEG,OVER			:	out	std_logic;
-	COUT						:	inout	std_logic;
+	ZER,NEG,OVER			:	out	std_logic;								-- Flags de indicação de zero, valor negativo e overflow, respectivamente
+	COUT						:	out	std_logic;								-- Flag de Carry Out
 	RESULT					:	out	std_logic_vector(3 downto 0));	-- Resultado de 4 bits dos 2 operandos 
 end ULA;
 ------------------------------------
@@ -58,35 +58,35 @@ architecture hardware of ULA is
 		A,B							:	in		std_logic_vector(3 downto 0);		-- Operandos de 4 bits
 		IS_ADD						:	in		std_logic;								-- Definição de soma ou subtração
 		ZERO,NEGATIVE,OVERFLOW	:	out	std_logic;								-- Flags de indicação de zero, valor negativo e overflow, respectivamente
-		C_OUT							:	inout	std_logic;								-- Flag de Carry Out
+		C_OUT							:	out	std_logic;								-- Flag de Carry Out
 		RESULT						:	out	std_logic_vector(3 downto 0));	-- Resultado de 4 bits dos 2 operandos 
 	end component;
 	
-	component counter_2_numbers is
-	port (
-		clk		:	in		std_logic;								-- Clock de entrada do sistema
-		pause		:	in		std_logic;								-- Evita que o contador aumente (estagnando os 2 operandos)
-		A, B		: 	out	std_logic_vector(3 downto 0));	-- Operandos de Saída
-	end component;
-	
-	component display is
-	port (
-		VALUE_IN		:	in		std_logic_vector(3 downto 0);
-		DISPLAY_OUT	:	out	std_logic_vector(6 downto 0));
-	end component;
+--	component counter_2_numbers is
+--	port (
+--		clk		:	in		std_logic;								-- Clock de entrada do sistema
+--		pause		:	in		std_logic;								-- Evita que o contador aumente (estagnando os 2 operandos)
+--		A, B		: 	out	std_logic_vector(3 downto 0));	-- Operandos de Saída
+--	end component;
+--	
+--	component display is
+--	port (
+--		VALUE_IN		:	in		std_logic_vector(3 downto 0);
+--		DISPLAY_OUT	:	out	std_logic_vector(6 downto 0));
+--	end component;
 	---------------------------------
 
-	signal A, B 											:	std_logic_vector(3 downto 0);
+--	signal A, B 											:	std_logic_vector(3 downto 0);
 	signal resAdd, resSub, res_bin 					:	std_logic_vector(3 downto 0);
 	signal zer_add, neg_add, over_add, cout_add	:	std_logic;
 	signal zer_sub, neg_sub, over_sub, cout_sub	:	std_logic;
 
 begin
 
-	counter: counter_2_numbers port map(CLK, PAUSE, A, B);
+--	counter: counter_2_numbers port map(CLK, PAUSE, A, B);
 	
-	X <= A;
-	Y <= B;
+--	X <= A;
+--	Y <= B;
 
 	Add_C2: Add_Sub_C2 port map(A, B, '1', zer_add, neg_add, over_add, cout_add, resAdd);
 	Sub_C2: Add_Sub_C2 port map(A, B, '0', zer_sub, neg_sub, over_sub, cout_sub, resSub);
