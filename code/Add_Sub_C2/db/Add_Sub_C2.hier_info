@@ -1,0 +1,104 @@
+|Add_Sub_C2
+A[0] => FA_4_bits:Full_Adder.x[0]
+A[1] => FA_4_bits:Full_Adder.x[1]
+A[2] => FA_4_bits:Full_Adder.x[2]
+A[3] => FA_4_bits:Full_Adder.x[3]
+B[0] => operatorB[0].DATAB
+B[0] => operatorB[0].DATAA
+B[1] => operatorB[1].DATAB
+B[1] => operatorB[1].DATAA
+B[2] => operatorB[2].DATAB
+B[2] => operatorB[2].DATAA
+B[3] => operatorB[3].DATAB
+B[3] => operatorB[3].DATAA
+IS_ADD => operatorB[3].OUTPUTSELECT
+IS_ADD => operatorB[2].OUTPUTSELECT
+IS_ADD => operatorB[1].OUTPUTSELECT
+IS_ADD => operatorB[0].OUTPUTSELECT
+IS_ADD => C_OUT.IN1
+IS_ADD => FA_4_bits:Full_Adder.cin
+IS_ADD => C_OUT.IN1
+ZERO << ZERO.DB_MAX_OUTPUT_PORT_TYPE
+NEGATIVE << NEGATIVE.DB_MAX_OUTPUT_PORT_TYPE
+OVERFLOW << over.DB_MAX_OUTPUT_PORT_TYPE
+C_OUT << C_OUT.DB_MAX_OUTPUT_PORT_TYPE
+RESULT[0] << FA_4_bits:Full_Adder.z[0]
+RESULT[1] << FA_4_bits:Full_Adder.z[1]
+RESULT[2] << FA_4_bits:Full_Adder.z[2]
+RESULT[3] << FA_4_bits:Full_Adder.z[3]
+
+
+|Add_Sub_C2|FA_4_bits:Full_Adder
+x[0] => FA:a0.A
+x[1] => FA:a1.A
+x[2] => FA:a2.A
+x[3] => FA:a3.A
+y[0] => FA:a0.B
+y[1] => FA:a1.B
+y[2] => FA:a2.B
+y[3] => FA:a3.B
+cin => FA:a0.C_in
+cout <= FA:a3.C_out
+cout_1 <= FA:a2.C_out
+z[0] <= FA:a0.S
+z[1] <= FA:a1.S
+z[2] <= FA:a2.S
+z[3] <= FA:a3.S
+
+
+|Add_Sub_C2|FA_4_bits:Full_Adder|FA:a0
+A => S.IN0
+A => C_out.IN0
+A => C_out.IN0
+B => S.IN1
+B => C_out.IN0
+B => C_out.IN1
+C_in => S.IN1
+C_in => C_out.IN1
+C_in => C_out.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Add_Sub_C2|FA_4_bits:Full_Adder|FA:a1
+A => S.IN0
+A => C_out.IN0
+A => C_out.IN0
+B => S.IN1
+B => C_out.IN0
+B => C_out.IN1
+C_in => S.IN1
+C_in => C_out.IN1
+C_in => C_out.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Add_Sub_C2|FA_4_bits:Full_Adder|FA:a2
+A => S.IN0
+A => C_out.IN0
+A => C_out.IN0
+B => S.IN1
+B => C_out.IN0
+B => C_out.IN1
+C_in => S.IN1
+C_in => C_out.IN1
+C_in => C_out.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Add_Sub_C2|FA_4_bits:Full_Adder|FA:a3
+A => S.IN0
+A => C_out.IN0
+A => C_out.IN0
+B => S.IN1
+B => C_out.IN0
+B => C_out.IN1
+C_in => S.IN1
+C_in => C_out.IN1
+C_in => C_out.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+

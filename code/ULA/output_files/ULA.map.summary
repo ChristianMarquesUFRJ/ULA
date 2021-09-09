@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Sat Aug 14 16:22:57 2021
+Analysis & Synthesis Status : Successful - Tue Aug 31 20:23:48 2021
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : ULA
 Top-level Entity Name : ULA
 Family : Cyclone IV E
-Total logic elements : 53
-    Total combinational functions : 53
-    Dedicated logic registers : 0
-Total registers : 0
+Total logic elements : 144
+    Total combinational functions : 144
+    Dedicated logic registers : 70
+Total registers : 70
 Total pins : 21
 Total virtual pins : 0
 Total memory bits : 0

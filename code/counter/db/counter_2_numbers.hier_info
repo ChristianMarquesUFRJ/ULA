@@ -1,0 +1,81 @@
+|counter_2_numbers
+clk => counter:A_counter.clk
+clk => counter:B_counter.clk
+A[0] <= counter:A_counter.q[0]
+A[1] <= counter:A_counter.q[1]
+A[2] <= counter:A_counter.q[2]
+A[3] <= counter:A_counter.q[3]
+B[0] <= counter:B_counter.q[0]
+B[1] <= counter:B_counter.q[1]
+B[2] <= counter:B_counter.q[2]
+B[3] <= counter:B_counter.q[3]
+
+
+|counter_2_numbers|counter:A_counter
+clk => \counter_process:counter_output[0].CLK
+clk => \counter_process:counter_output[1].CLK
+clk => \counter_process:counter_output[2].CLK
+clk => \counter_process:counter_output[3].CLK
+clk => \counter_process:prescaler[0].CLK
+clk => \counter_process:prescaler[1].CLK
+clk => \counter_process:prescaler[2].CLK
+clk => \counter_process:prescaler[3].CLK
+clk => \counter_process:prescaler[4].CLK
+clk => \counter_process:prescaler[5].CLK
+clk => \counter_process:prescaler[6].CLK
+clk => \counter_process:prescaler[7].CLK
+clk => \counter_process:prescaler[8].CLK
+clk => \counter_process:prescaler[9].CLK
+clk => \counter_process:prescaler[10].CLK
+clk => \counter_process:prescaler[11].CLK
+clk => \counter_process:prescaler[12].CLK
+clk => \counter_process:prescaler[13].CLK
+clk => \counter_process:prescaler[14].CLK
+clk => \counter_process:prescaler[15].CLK
+clk => \counter_process:prescaler[16].CLK
+clk => \counter_process:prescaler[17].CLK
+clk => \counter_process:prescaler[18].CLK
+clk => \counter_process:prescaler[19].CLK
+clk => \counter_process:prescaler[20].CLK
+clk => \counter_process:prescaler[21].CLK
+clk => \counter_process:prescaler[22].CLK
+q[0] <= \counter_process:counter_output[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= \counter_process:counter_output[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= \counter_process:counter_output[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= \counter_process:counter_output[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter_2_numbers|counter:B_counter
+clk => \counter_process:counter_output[0].CLK
+clk => \counter_process:counter_output[1].CLK
+clk => \counter_process:counter_output[2].CLK
+clk => \counter_process:counter_output[3].CLK
+clk => \counter_process:prescaler[0].CLK
+clk => \counter_process:prescaler[1].CLK
+clk => \counter_process:prescaler[2].CLK
+clk => \counter_process:prescaler[3].CLK
+clk => \counter_process:prescaler[4].CLK
+clk => \counter_process:prescaler[5].CLK
+clk => \counter_process:prescaler[6].CLK
+clk => \counter_process:prescaler[7].CLK
+clk => \counter_process:prescaler[8].CLK
+clk => \counter_process:prescaler[9].CLK
+clk => \counter_process:prescaler[10].CLK
+clk => \counter_process:prescaler[11].CLK
+clk => \counter_process:prescaler[12].CLK
+clk => \counter_process:prescaler[13].CLK
+clk => \counter_process:prescaler[14].CLK
+clk => \counter_process:prescaler[15].CLK
+clk => \counter_process:prescaler[16].CLK
+clk => \counter_process:prescaler[17].CLK
+clk => \counter_process:prescaler[18].CLK
+clk => \counter_process:prescaler[19].CLK
+clk => \counter_process:prescaler[20].CLK
+clk => \counter_process:prescaler[21].CLK
+clk => \counter_process:prescaler[22].CLK
+q[0] <= \counter_process:counter_output[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= \counter_process:counter_output[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= \counter_process:counter_output[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= \counter_process:counter_output[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

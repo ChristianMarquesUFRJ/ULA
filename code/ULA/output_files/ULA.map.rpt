@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ULA
-Sat Aug 14 16:22:57 2021
+Tue Aug 31 20:23:48 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -15,12 +15,15 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. User-Specified and Inferred Latches
   9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Port Connectivity Checks: "Add_Sub_C2:Sub_C2"
- 12. Port Connectivity Checks: "Add_Sub_C2:Add_C2"
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: counter_2_numbers:counter|counter:A_counter
+ 13. Parameter Settings for User Entity Instance: counter_2_numbers:counter|counter:B_counter
+ 14. Port Connectivity Checks: "Add_Sub_C2:Sub_C2"
+ 15. Port Connectivity Checks: "Add_Sub_C2:Add_C2"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -47,15 +50,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Aug 14 16:22:57 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Aug 31 20:23:48 2021       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; ULA                                         ;
 ; Top-level Entity Name              ; ULA                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 53                                          ;
-;     Total combinational functions  ; 53                                          ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
+; Total logic elements               ; 144                                         ;
+;     Total combinational functions  ; 144                                         ;
+;     Dedicated logic registers      ; 70                                          ;
+; Total registers                    ; 70                                          ;
 ; Total pins                         ; 21                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -166,68 +169,72 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                      ;
-+----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                         ; Library ;
-+----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------+---------+
-; ula.vhd                          ; yes             ; Auto-Found VHDL File  ; C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd        ;         ;
-; add_sub_c2.vhd                   ; yes             ; Auto-Found VHDL File  ; C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/add_sub_c2.vhd ;         ;
-; fa_4_bits.vhd                    ; yes             ; Auto-Found VHDL File  ; C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/fa_4_bits.vhd  ;         ;
-; fa.vhd                           ; yes             ; Auto-Found VHDL File  ; C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/fa.vhd         ;         ;
-+----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------+---------+
+; ula.vhd                          ; yes             ; Auto-Found VHDL File  ; C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd               ;         ;
+; counter_2_numbers.vhd            ; yes             ; Auto-Found VHDL File  ; C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/counter_2_numbers.vhd ;         ;
+; counter.vhd                      ; yes             ; Auto-Found VHDL File  ; C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/counter.vhd           ;         ;
+; add_sub_c2.vhd                   ; yes             ; Auto-Found VHDL File  ; C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/add_sub_c2.vhd        ;         ;
+; fa_4_bits.vhd                    ; yes             ; Auto-Found VHDL File  ; C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/fa_4_bits.vhd         ;         ;
+; fa.vhd                           ; yes             ; Auto-Found VHDL File  ; C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/fa.vhd                ;         ;
++----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 53           ;
-;                                             ;              ;
-; Total combinational functions               ; 53           ;
-; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 31           ;
-;     -- 3 input functions                    ; 17           ;
-;     -- <=2 input functions                  ; 5            ;
-;                                             ;              ;
-; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 53           ;
-;     -- arithmetic mode                      ; 0            ;
-;                                             ;              ;
-; Total registers                             ; 0            ;
-;     -- Dedicated logic registers            ; 0            ;
-;     -- I/O registers                        ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 21           ;
-;                                             ;              ;
-; Embedded Multiplier 9-bit elements          ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; SEL[0]~input ;
-; Maximum fan-out                             ; 17           ;
-; Total fan-out                               ; 214          ;
-; Average fan-out                             ; 2.25         ;
-+---------------------------------------------+--------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 144       ;
+;                                             ;           ;
+; Total combinational functions               ; 144       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 54        ;
+;     -- 3 input functions                    ; 21        ;
+;     -- <=2 input functions                  ; 69        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 84        ;
+;     -- arithmetic mode                      ; 60        ;
+;                                             ;           ;
+; Total registers                             ; 70        ;
+;     -- Dedicated logic registers            ; 70        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 21        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 70        ;
+; Total fan-out                               ; 654       ;
+; Average fan-out                             ; 2.55      ;
++---------------------------------------------+-----------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                      ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+-------------+--------------+
-; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Entity Name ; Library Name ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+-------------+--------------+
-; |ULA                         ; 53 (38)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |ULA                                              ; ULA         ; work         ;
-;    |Add_Sub_C2:Add_C2|       ; 6 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Add_C2                            ; Add_Sub_C2  ; work         ;
-;       |FA_4_bits:Full_Adder| ; 5 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Add_C2|FA_4_bits:Full_Adder       ; FA_4_bits   ; work         ;
-;          |FA:a1|             ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Add_C2|FA_4_bits:Full_Adder|FA:a1 ; FA          ; work         ;
-;          |FA:a2|             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Add_C2|FA_4_bits:Full_Adder|FA:a2 ; FA          ; work         ;
-;          |FA:a3|             ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Add_C2|FA_4_bits:Full_Adder|FA:a3 ; FA          ; work         ;
-;    |Add_Sub_C2:Sub_C2|       ; 9 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Sub_C2                            ; Add_Sub_C2  ; work         ;
-;       |FA_4_bits:Full_Adder| ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Sub_C2|FA_4_bits:Full_Adder       ; FA_4_bits   ; work         ;
-;          |FA:a0|             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Sub_C2|FA_4_bits:Full_Adder|FA:a0 ; FA          ; work         ;
-;          |FA:a1|             ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Sub_C2|FA_4_bits:Full_Adder|FA:a1 ; FA          ; work         ;
-;          |FA:a2|             ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Sub_C2|FA_4_bits:Full_Adder|FA:a2 ; FA          ; work         ;
-;          |FA:a3|             ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Sub_C2|FA_4_bits:Full_Adder|FA:a3 ; FA          ; work         ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+-------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                              ;
++--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Entity Name       ; Library Name ;
++--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+-------------------+--------------+
+; |ULA                           ; 144 (40)            ; 70 (0)                    ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |ULA                                              ; ULA               ; work         ;
+;    |Add_Sub_C2:Add_C2|         ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Add_C2                            ; Add_Sub_C2        ; work         ;
+;       |FA_4_bits:Full_Adder|   ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Add_C2|FA_4_bits:Full_Adder       ; FA_4_bits         ; work         ;
+;          |FA:a1|               ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Add_C2|FA_4_bits:Full_Adder|FA:a1 ; FA                ; work         ;
+;          |FA:a2|               ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Add_C2|FA_4_bits:Full_Adder|FA:a2 ; FA                ; work         ;
+;    |Add_Sub_C2:Sub_C2|         ; 7 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Sub_C2                            ; Add_Sub_C2        ; work         ;
+;       |FA_4_bits:Full_Adder|   ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Sub_C2|FA_4_bits:Full_Adder       ; FA_4_bits         ; work         ;
+;          |FA:a0|               ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Sub_C2|FA_4_bits:Full_Adder|FA:a0 ; FA                ; work         ;
+;          |FA:a1|               ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Sub_C2|FA_4_bits:Full_Adder|FA:a1 ; FA                ; work         ;
+;          |FA:a2|               ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Sub_C2|FA_4_bits:Full_Adder|FA:a2 ; FA                ; work         ;
+;          |FA:a3|               ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|Add_Sub_C2:Sub_C2|FA_4_bits:Full_Adder|FA:a3 ; FA                ; work         ;
+;    |counter_2_numbers:counter| ; 94 (0)              ; 70 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|counter_2_numbers:counter                    ; counter_2_numbers ; work         ;
+;       |counter:A_counter|      ; 47 (47)             ; 35 (35)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|counter_2_numbers:counter|counter:A_counter  ; counter           ; work         ;
+;       |counter:B_counter|      ; 47 (47)             ; 35 (35)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|counter_2_numbers:counter|counter:B_counter  ; counter           ; work         ;
++--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -250,14 +257,25 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 70    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 62    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                             ;
++--------------------------------------------------------------------------------+---------+
+; Inverted Register                                                              ; Fan out ;
++--------------------------------------------------------------------------------+---------+
+; counter_2_numbers:counter|counter:A_counter|\counter_process:counter_output[3] ; 11      ;
+; counter_2_numbers:counter|counter:B_counter|\counter_process:counter_output[3] ; 11      ;
+; Total number of inverted registers = 2                                         ;         ;
++--------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------+
@@ -266,9 +284,29 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |ULA|NEG                   ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ULA|ZER                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ULA|RESULT                ;
 ; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |ULA|res_bin               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter_2_numbers:counter|counter:A_counter ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; times          ; 16    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter_2_numbers:counter|counter:B_counter ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; times          ; 1     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------+
@@ -295,15 +333,20 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 21                          ;
-; cycloneiii_lcell_comb ; 54                          ;
-;     normal            ; 54                          ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 17                          ;
-;         4 data inputs ; 31                          ;
+; cycloneiii_ff         ; 70                          ;
+;     ENA               ; 62                          ;
+;     plain             ; 8                           ;
+; cycloneiii_lcell_comb ; 147                         ;
+;     arith             ; 60                          ;
+;         2 data inputs ; 60                          ;
+;     normal            ; 87                          ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 54                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.93                        ;
+; Max LUT depth         ; 9.90                        ;
+; Average LUT depth     ; 7.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -312,7 +355,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -322,7 +365,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Aug 14 16:22:41 2021
+    Info: Processing started: Tue Aug 31 20:23:34 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ULA -c ULA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -330,27 +373,40 @@ Warning (12125): Using design file ula.vhd, which is not specified as a design f
     Info (12022): Found design unit 1: ULA-hardware File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 52
     Info (12023): Found entity 1: ULA File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 34
 Info (12127): Elaborating entity "ULA" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at ula.vhd(100): signal "resAdd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 100
-Warning (10492): VHDL Process Statement warning at ula.vhd(101): signal "zer_add" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 101
-Warning (10492): VHDL Process Statement warning at ula.vhd(102): signal "neg_add" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 102
-Warning (10492): VHDL Process Statement warning at ula.vhd(103): signal "over_add" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 103
-Warning (10492): VHDL Process Statement warning at ula.vhd(104): signal "cout_add" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 104
-Warning (10492): VHDL Process Statement warning at ula.vhd(108): signal "resSub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 108
-Warning (10492): VHDL Process Statement warning at ula.vhd(109): signal "zer_sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 109
-Warning (10492): VHDL Process Statement warning at ula.vhd(110): signal "neg_sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 110
-Warning (10492): VHDL Process Statement warning at ula.vhd(111): signal "over_sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 111
-Warning (10492): VHDL Process Statement warning at ula.vhd(112): signal "cout_sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 112
-Warning (10492): VHDL Process Statement warning at ula.vhd(148): signal "res_bin" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 148
-Warning (10492): VHDL Process Statement warning at ula.vhd(155): signal "res_bin" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 155
-Warning (10631): VHDL Process Statement warning at ula.vhd(95): inferring latch(es) for signal or variable "res_bin", which holds its previous value in one or more paths through the process File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
-Info (10041): Inferred latch for "res_bin[0]" at ula.vhd(95) File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
-Info (10041): Inferred latch for "res_bin[1]" at ula.vhd(95) File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
-Info (10041): Inferred latch for "res_bin[2]" at ula.vhd(95) File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
-Info (10041): Inferred latch for "res_bin[3]" at ula.vhd(95) File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at ula.vhd(94): signal "resAdd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 94
+Warning (10492): VHDL Process Statement warning at ula.vhd(95): signal "zer_add" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at ula.vhd(96): signal "neg_add" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 96
+Warning (10492): VHDL Process Statement warning at ula.vhd(97): signal "over_add" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at ula.vhd(98): signal "cout_add" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at ula.vhd(102): signal "resSub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at ula.vhd(103): signal "zer_sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at ula.vhd(104): signal "neg_sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at ula.vhd(105): signal "over_sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at ula.vhd(106): signal "cout_sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at ula.vhd(142): signal "res_bin" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 142
+Warning (10492): VHDL Process Statement warning at ula.vhd(149): signal "res_bin" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 149
+Warning (10631): VHDL Process Statement warning at ula.vhd(89): inferring latch(es) for signal or variable "res_bin", which holds its previous value in one or more paths through the process File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 89
+Info (10041): Inferred latch for "res_bin[0]" at ula.vhd(89) File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 89
+Info (10041): Inferred latch for "res_bin[1]" at ula.vhd(89) File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 89
+Info (10041): Inferred latch for "res_bin[2]" at ula.vhd(89) File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 89
+Info (10041): Inferred latch for "res_bin[3]" at ula.vhd(89) File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 89
+Warning (12125): Using design file counter_2_numbers.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: counter_2_numbers-hardware File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/counter_2_numbers.vhd Line: 36
+    Info (12023): Found entity 1: counter_2_numbers File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/counter_2_numbers.vhd Line: 23
+Info (12128): Elaborating entity "counter_2_numbers" for hierarchy "counter_2_numbers:counter" File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 81
+Warning (12125): Using design file counter.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: counter-hardware File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/counter.vhd Line: 38
+    Info (12023): Found entity 1: counter File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/counter.vhd Line: 25
+Info (12128): Elaborating entity "counter" for hierarchy "counter_2_numbers:counter|counter:A_counter" File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/counter_2_numbers.vhd Line: 49
+Warning (10542): VHDL Variable Declaration warning at counter.vhd(45): used initial value expression for variable "maximum" because variable was never assigned a value File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/counter.vhd Line: 45
+Warning (10492): VHDL Process Statement warning at counter.vhd(48): signal "pause" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/counter.vhd Line: 48
+Info (12128): Elaborating entity "counter" for hierarchy "counter_2_numbers:counter|counter:B_counter" File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/counter_2_numbers.vhd Line: 50
+Warning (10542): VHDL Variable Declaration warning at counter.vhd(45): used initial value expression for variable "maximum" because variable was never assigned a value File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/counter.vhd Line: 45
+Warning (10492): VHDL Process Statement warning at counter.vhd(48): signal "pause" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/counter.vhd Line: 48
 Warning (12125): Using design file add_sub_c2.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: Add_Sub_C2-hardware File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/add_sub_c2.vhd Line: 36
     Info (12023): Found entity 1: Add_Sub_C2 File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/add_sub_c2.vhd Line: 21
-Info (12128): Elaborating entity "Add_Sub_C2" for hierarchy "Add_Sub_C2:Add_C2" File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 92
+Info (12128): Elaborating entity "Add_Sub_C2" for hierarchy "Add_Sub_C2:Add_C2" File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 86
 Warning (10540): VHDL Signal Declaration warning at add_sub_c2.vhd(48): used explicit default value for signal "signalRES" because signal was never assigned a value File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/add_sub_c2.vhd Line: 48
 Warning (12125): Using design file fa_4_bits.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: FA_4_bits-hardware File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/fa_4_bits.vhd Line: 36
@@ -360,28 +416,25 @@ Warning (12125): Using design file fa.vhd, which is not specified as a design fi
     Info (12022): Found design unit 1: FA-hardware File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/fa.vhd Line: 33
     Info (12023): Found entity 1: FA File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/fa.vhd Line: 21
 Info (12128): Elaborating entity "FA" for hierarchy "Add_Sub_C2:Add_C2|FA_4_bits:Full_Adder|FA:a0" File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/fa_4_bits.vhd Line: 50
-Warning (13012): Latch res_bin[1] has unsafe behavior File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
+Warning (13012): Latch res_bin[1] has unsafe behavior File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 89
     Warning (13013): Ports D and ENA on the latch are fed by the same signal SEL[2] File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 38
-Warning (13012): Latch res_bin[2] has unsafe behavior File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
+Warning (13012): Latch res_bin[2] has unsafe behavior File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 89
     Warning (13013): Ports D and ENA on the latch are fed by the same signal SEL[2] File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 38
-Warning (13012): Latch res_bin[3] has unsafe behavior File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
+Warning (13012): Latch res_bin[3] has unsafe behavior File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 89
     Warning (13013): Ports D and ENA on the latch are fed by the same signal SEL[2] File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 38
-Warning (13012): Latch res_bin[0] has unsafe behavior File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 95
+Warning (13012): Latch res_bin[0] has unsafe behavior File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 89
     Warning (13013): Ports D and ENA on the latch are fed by the same signal SEL[2] File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 38
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "PAUSE" File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 39
-    Warning (15610): No output dependent on input pin "CLK" File: C:/Users/chris/Desktop/quartus/Trabalhos/ULA/code/ULA/ula.vhd Line: 40
-Info (21057): Implemented 74 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 13 input pins
-    Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 53 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 4781 megabytes
-    Info: Processing ended: Sat Aug 14 16:22:57 2021
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:30
+Info (21057): Implemented 225 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 204 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 4774 megabytes
+    Info: Processing ended: Tue Aug 31 20:23:48 2021
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:29
 
 

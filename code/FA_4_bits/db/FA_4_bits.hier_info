@@ -1,0 +1,74 @@
+|FA_4_bits
+x[0] => FA:a0.A
+x[1] => FA:a1.A
+x[2] => FA:a2.A
+x[3] => FA:a3.A
+y[0] => FA:a0.B
+y[1] => FA:a1.B
+y[2] => FA:a2.B
+y[3] => FA:a3.B
+cin => FA:a0.C_in
+cout <= FA:a3.C_out
+cout_1 <= FA:a2.C_out
+z[0] <= FA:a0.S
+z[1] <= FA:a1.S
+z[2] <= FA:a2.S
+z[3] <= FA:a3.S
+
+
+|FA_4_bits|FA:a0
+A => S.IN0
+A => C_out.IN0
+A => C_out.IN0
+B => S.IN1
+B => C_out.IN0
+B => C_out.IN1
+C_in => S.IN1
+C_in => C_out.IN1
+C_in => C_out.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FA_4_bits|FA:a1
+A => S.IN0
+A => C_out.IN0
+A => C_out.IN0
+B => S.IN1
+B => C_out.IN0
+B => C_out.IN1
+C_in => S.IN1
+C_in => C_out.IN1
+C_in => C_out.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FA_4_bits|FA:a2
+A => S.IN0
+A => C_out.IN0
+A => C_out.IN0
+B => S.IN1
+B => C_out.IN0
+B => C_out.IN1
+C_in => S.IN1
+C_in => C_out.IN1
+C_in => C_out.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FA_4_bits|FA:a3
+A => S.IN0
+A => C_out.IN0
+A => C_out.IN0
+B => S.IN1
+B => C_out.IN0
+B => C_out.IN1
+C_in => S.IN1
+C_in => C_out.IN1
+C_in => C_out.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+

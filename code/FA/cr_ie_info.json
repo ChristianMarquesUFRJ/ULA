@@ -1,0 +1,22 @@
+{
+	"system" : {
+		"platform" : "windows64",
+		"os_name" : "Windows 10",
+		"os_version" : "10.0"
+	},
+	"error" : {
+		"executable" : "quartus_eda",
+		"comment" : "not_applicable",
+		"error_message" : "Access Violation at 0X00007FF83E172796",
+		"source_file" : "unknown",
+		"line" : "0",
+		"stack_trace" : "\t0x7ff83e172795: DB_HDB + 0x22795 (?compare@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBAHAEBV12@@Z + 0x19)\n\t0x7ff83e18fb57: DB_HDB + 0x3fb57 (?find@?$QTL_HASH_SET_LITE@PEAVHDB_SECTION@@UHDB_SECTION_HASH_OPS@@@@QEBA?AV?$QTL_HASH_SET_LITE_CONST_ITERATOR@PEAVHDB_SECTION@@UHDB_SECTION_HASH_OPS@@@@AEBQEAVHDB_SECTION@@@Z + 0x5f)\n\t0x7ff83e18f788: DB_HDB + 0x3f788 (?find_section@HDB_SECTION_COL@@QEAA?AV?$QTL_HASH_SET_LITE_ITERATOR@PEAVHDB_SECTION@@UHDB_SECTION_HASH_OPS@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z + 0x5c)\n\t0x7ff83e17cdfe: DB_HDB + 0x2cdfe (?find_section@HDB_SECTION@@QEAAPEAV1@W4ACF_SECTION_TYPE_ENUM@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z + 0x7e)\n\t0x7ff854a01c68: tpi_tset + 0x1c68 (?get_tool@TSET_UTIL@@QEAA?AVTSET_TOOL@@W4ETI_EDA_CATEGORY_TYPE@@@Z + 0x1b8)\n\t0x7ff722cf57ef: quartus_eda + 0x57ef (?add_eda_information@QNETO_FRAMEWORK@@QEAA_N_N@Z + 0xc7f)\n\t0x7ff722d00721: quartus_eda + 0x10721 (?write_reports@QNETO_FRAMEWORK@@UEAA_N_NPEBD@Z + 0x121)\n\t0x7ff844b61587: comp_qexe + 0x11587 (qexe_do_normal + 0x267)\n\t0x7ff844b66622: comp_qexe + 0x16622 (qexe_run + 0x432)\n\t0x7ff844b67371: comp_qexe + 0x17371 (?qexe_standard_main@@YAHPEAVQEXE_FRAMEWORK@@PEAPEBUQEXE_OPTION_DEFINITION@@HPEAPEBD@Z + 0xc1)\n\t0x7ff722cffe9f: quartus_eda + 0xfe9f (?qneto_main@@YAHHPEAPEBD@Z + 0xaf)\n\t0x7ff850623258: CCL_MSG + 0x13258 (?msg_main_thread@@YAPEAXPEAX@Z + 0x18)\n\t0x7ff850624a5e: CCL_MSG + 0x14a5e (?msg_thread_wrapper@@YAPEAXP6APEAXPEAX@Z0@Z + 0x6e)\n\t0x7ff85d006af0: ccl_mem + 0x16af0 (?mem_thread_wrapper@@YAPEAXP6APEAXPEAX@Z0@Z + 0x70)\n\t0x7ff850622af1: CCL_MSG + 0x12af1 (?msg_exe_main@@YAHHPEAPEBDP6AHH0@Z@Z + 0xa1)\n\t0x7ff722d1a746: quartus_eda + 0x2a746 (__tmainCRTStartup + 0x10e)\n\t0x7ff88bff7033: KERNEL32 + 0x17033 (BaseThreadInitThunk + 0x13)\n\t0x7ff88d7e2650: ntdll + 0x52650 (RtlUserThreadStart + 0x20)\n",
+		"subsystem" : "unknown"
+	},
+	"quartus" : {
+		"quartus_bits" : "64",
+		"version" : "20.1.0",
+		"build" : "711",
+		"edition" : "Lite Edition"
+	}
+}

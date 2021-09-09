@@ -69,12 +69,6 @@ architecture hardware of ULA is
 		pause		:	in		std_logic;								-- Evita que o contador aumente (estagnando os 2 operandos)
 		A, B		: 	out	std_logic_vector(3 downto 0));	-- Operandos de Saída
 	end component;
-	
-	component display is
-	port (
-		VALUE_IN		:	in		std_logic_vector(3 downto 0);
-		DISPLAY_OUT	:	out	std_logic_vector(6 downto 0));
-	end component;
 	---------------------------------
 
 	signal A, B 											:	std_logic_vector(3 downto 0);
